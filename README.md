@@ -21,7 +21,13 @@ I would define my self as a knowledge seeker who focuses on improving skills.<br
 ###  Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=raoqasim404&limit=5&theme=moltack&combine_all_yearly_contributions=true)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/raoqasim404/raoqasim404/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/raoqasim404/raoqasim404/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/raoqasim404/raoqasim404/output/github-snake.svg" />
+</picture>
+
 ---
 [![](https://komarev.com/ghpvc/?username=raoqasim404&icon=9&color=10)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
