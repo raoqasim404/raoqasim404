@@ -1,5 +1,5 @@
 #  About Me:
-I would define my self as a knowledge seeker who focuses on improving skills.<br>Inspired by the quote : <br><br>                                         "Hard work beats talent when talent doesn't work hard."<br><br>I am currently studying Artificial Intelligence , love to take challenges on me and<br>complete them flawlessly.<br>I am quite active in various hackathons and competitions and wants to set goals<br>high so my future self can be quite proud of my work.<br>I'd love to connect to people and companies who'll make me go break the bars.
+I'd define my self as a knowledge seeker who focuses on improving skills.<br>Inspired by the quote : <br>                                         "Hard work beats talent when talent doesn't work hard."<br>I am currently studying Artificial Intelligence , love to take challenges on me and<br>complete them flawlessly.<br>I am quite active in various hackathons and competitions and want to set goals<br>high so my future self can be quite proud of my work.<br>I'd love to connect to people and companies who'll make me go break the bars.
 
 
 ##  Socials:
