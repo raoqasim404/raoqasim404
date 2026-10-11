@@ -1,42 +1,72 @@
-name: GitHub Snake Game
+name: Profile Animations
 
 on:
-  # Schedule the workflow to run daily at midnight UTC
+  # Refresh every day at midnight UTC
   schedule:
     - cron: "0 0 * * *"
-  # Allow manual triggering of the workflow
+  # Run manually from the Actions tab
   workflow_dispatch:
-  # Trigger the workflow on pushes to the main branch
+  # Re-run whenever the README / workflow changes on main
   push:
     branches:
       - main
+
+# Needed so the workflow can push to the `output` branch
+permissions:
+  contents: write
+
+# Never run two copies at once
+concurrency:
+  group: profile-animations
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      # Step 2: Generate the snake animations
-      - name: Generate GitHub Contributions Snake Animations
+      # 1) Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2) Snake animations (light, dark, and a custom-colored GIF)
+      - name: Generate contribution snake
         uses: Platane/snk@v3
         with:
-          # GitHub username to generate the animation for
           github_user_name: ${{ github.repository_owner }}
-          # Define the output files and their configurations
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Step 3: Deploy the generated files to the 'output' branch
-      - name: Deploy to Output Branch
-        uses: peaceiris/actions-gh-pages@v3
+
+      # 3) 3D contribution graph (generates files in ./profile-3d-contrib)
+      #    continue-on-error: if this step ever fails, the snake still gets deployed
+      - name: Generate 3D contribution graph
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      # 4) Put the 3D graphs next to the snake files
+      - name: Add 3D graphs to dist
+        run: |
+          mkdir -p dist
+          cp profile-3d-contrib/*.svg dist/ || echo "3D graphs not generated, skipping"
+
+      # 5) Publish everything to the `output` branch
+      #    force_orphan keeps that branch at a single commit, so daily
+      #    updates never bloat the repository
+      - name: Deploy to output branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          # Optionally, you can set a custom commit message
-          commit_message: "Update snake animation [skip ci]"
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_message: "Update profile animations [skip ci]"
