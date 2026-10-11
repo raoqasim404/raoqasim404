@@ -76,19 +76,6 @@ I'd love to connect with people and companies who will push me to break my own b
 
 ---
 
-##  Contribution Graph
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/raoqasim404/raoqasim404/output/profile-night-rainbow.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/raoqasim404/raoqasim404/output/profile-green-animate.svg" />
-  <img alt="3D contribution graph" src="https://raw.githubusercontent.com/raoqasim404/raoqasim404/output/profile-green-animate.svg" />
-</picture>
-
-</div>
-
----
 
 ##  Contribution Snake
 
