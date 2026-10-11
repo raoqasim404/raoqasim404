@@ -57,7 +57,6 @@ I'd love to connect with people and companies who will push me to break my own b
 | Project | What it does | Built with |
 |---|---|---|
 |  **[Amazon Pulse](https://github.com/raoqasim404?tab=repositories)** <!-- TODO: replace with the exact repo link --> | Interactive Amazon deforestation tracker built for the NASA Space Apps Challenge 2026 ("Dancing with the SARs"), using radar satellite data to visualize surface change | Google Earth Engine, Sentinel-1 SAR, JavaScript |
-|  **[Project name](https://github.com/raoqasim404?tab=repositories)** <!-- TODO: add your next best project --> | One line about what it does and why it matters | Tech used |
 
 
 ---
